@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" alt="">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Full Stack Developer</p>
+                <h1>Hi, I'm <span>Yuvaraj</span> <br>  From Udumalpet </h1>
+            </div>
+        </div>
+
+    </div>
+    <!-- ----------------about----------------- -->
+   <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/yuvi.png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>Hi, I'm Yuvaraj, a passionate Full Stack Developer with a strong interest in Cloud Computing. I'm focused on building end-to-end web applications using modern technologies and continuously improving my skills in both frontend and backend development.
+My goal is to become a Software Developer and work on impactful tech solutions. I bring more than just coding—I’m also an experienced event manager and a reliable team supporter, which helps me collaborate well in any team environment.
+I’ve earned a certification in Software Testing, which adds a layer of quality assurance to every project I work on.
+I'm always open to new opportunities, collaborations, and challenges that help me grow.</p>
+
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Full Stack Devloper</span><br>Designing the applications</li>
+                            <li><span>Web Devlopment</span><br>Web application Devloper</li>
+                            <li><span>Cloud Engineer</span></li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2025</span><br>Full Stack Devloper From Besant Technology</li>
+                            <li><span>2023</span><br>BE.computer Science And technology From PIE TECH</li>
+                            <li><span>2019</span> <br>Diploma in Computer Science And Engineering <br> From Sbc Pollytechnic College</li>
+                        </ul>
+                     </div>      
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <!-- ---------------contact-------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title"> Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>yuvarajpalanisamy002@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 9944074857</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name " placeholder="Your Name"required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+   <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+   </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwnu5l1h8o57WASpNo75DWIYp_iBkHTeNJmAodz6qBa9Gy1aXMYBPShoUYXC1fiUYLydg/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+   </script>
+</body>
+</html>
